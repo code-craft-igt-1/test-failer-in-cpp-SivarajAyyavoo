@@ -18,8 +18,7 @@ jobs:
 
     - name: tshirts fail
       run: |
-        cmake -S . -B build
-        cmake --build build
+        g++ -Wall -Wextra -Werror src/tshirts_size_conversion.cpp test/tshirts_size_conversion_test.cpp -o tshirts_size_conversion_test.out
         bash .github/workflows/expectfail.sh build/tshirts_size_conversion_test.out
 
     - name: misaligned fail
