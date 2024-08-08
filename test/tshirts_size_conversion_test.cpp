@@ -1,4 +1,4 @@
-#include "inc/tshirts_size_conversion.h"
+#include "../inc/tshirts_size_conversion.h"
 #include "gtest/gtest.h"
 
 namespace tshirts {
