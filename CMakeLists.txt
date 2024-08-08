@@ -20,7 +20,7 @@ enable_testing()
 add_executable(
   test_failer
   src/tshirts_size_conversion.cpp
-  src/tshirts_size_conversion_test.cpp
+  test/tshirts_size_conversion_test.cpp
   inc/tshirts_size_conversion.h
 )
 target_link_libraries(
