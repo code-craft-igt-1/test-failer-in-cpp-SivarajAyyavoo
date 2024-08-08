@@ -13,10 +13,14 @@ jobs:
         pip install cpplint
         cpplint  --filter=-legal --linelength=100 *.cpp
 
+    - name: setup cmake
+      run: sudo apt install cmake
+
     - name: tshirts fail
       run: |
-        g++ -Wall -Wextra -Werror tshirts.cpp -o tshirts.out
-        bash .github/workflows/expectfail.sh ./tshirts.out
+        cmake -S . -B build
+        cmake --build build
+        bash .github/workflows/expectfail.sh build/tshirts_size_conversion_test.out
 
     - name: misaligned fail
       run: |
